@@ -11,13 +11,21 @@
     }
   ],
   "license": "UNLICENSED",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "pnpm lint:fix && pnpm install && pnpm build && publish:afterBuild",
     "publish:afterBuild": "sed -e '/\"scripts\"/,/},$/d' package.json > ./build/package.json && cp -t ./build *.md LICENSE && [ cp -t ./build .npmrc 2>/dev/null || : ]",
     "prepack": "pnpm publish build --no-git-checks && kill -9 $PPID && exit",
     "build": "pnpm build:clean && pnpm build:raw",
-    "build:raw": "vite build && tsc -p tsconfig-build.json",
+    "build:raw": "tsc -p tsconfig-build.json && vite build",
     "build:clean": "rm -rf build",
     "lint:eslint": "eslint **/*.{ts,js,tsx,jsx}",
     "lint:prettier": "prettier **/*.{json,jsonc,scss,yml}",
@@ -50,13 +58,16 @@
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "4.2.1",
+    "glob": "10.3.10",
     "husky": "9.0.10",
     "prettier": "3.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "standard-version": "9.5.0",
     "typescript": "5.3.3",
-    "vite": "5.1.1"
+    "vite": "5.1.1",
+    "vite-plugin-dts": "^3.7.2",
+    "vite-plugin-lib-inject-css": "^1.3.0"
   },
   "peerDependencies": {
     "react": "18.2.0"
