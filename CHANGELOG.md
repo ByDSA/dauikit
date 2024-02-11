@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/ByDSA/daukit/compare/v0.0.1...v0.0.2) (2024-02-11)
+
+
+### Bug Fixes
+
+* vite building ([11c5fea](https://github.com/ByDSA/daukit/commit/11c5fea48bf090778f32371781ea9e78eca2c144))
+
 ### 0.0.1 (2024-02-11)
 
 
