@@ -1,0 +1,16 @@
+.dauikit-button {
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-blue-dark);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  &:hover {
+    background-color: var(--color-blue-light);
+    border-color: var(--color-blue);
+  }
+}

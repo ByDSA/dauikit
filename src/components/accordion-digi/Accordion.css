@@ -1,0 +1,18 @@
+.ui-kit-accordion-digi {
+  --border: 1px solid #ccc;
+
+  astro-island:not(:first-child) {
+    .accordion-item {
+      border-top: 0;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+
+  astro-island:not(:last-child) {
+    .accordion-item {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
