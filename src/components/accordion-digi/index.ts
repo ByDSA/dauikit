@@ -1,6 +1,7 @@
 export {
-  default as Accordion
-} from './Accordion';
+  default as Accordion,
+} from "./Accordion";
+
 export {
-  default as AccordionItem
-} from './AccordionItem';
+  default as AccordionItem,
+} from "./AccordionItem";

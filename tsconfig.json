@@ -9,7 +9,7 @@
     "module": "ESNext",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "build",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true

@@ -1,14 +1,8 @@
 {
-  "name": "dauikit",
+  "name": "@ByDSA/dauikit",
   "type": "module",
   "version": "0.0.1",
   "description": "A UI kit for building modern web applications",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "author": "Dani Sales",
   "contributors": [
     {
@@ -17,14 +11,30 @@
     }
   ],
   "license": "UNLICENSED",
-  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build && tsc",
+    "prepublishOnly": "pnpm lint:fix && pnpm install && pnpm build && publish:afterBuild",
+    "publish:afterBuild": "sed -e '/\"scripts\"/,/},$/d' package.json > ./build/package.json && cp -t ./build *.md LICENSE && [ cp -t ./build .npmrc 2>/dev/null || : ]",
+    "prepack": "pnpm publish build --no-git-checks && kill -9 $PPID && exit",
+    "build": "pnpm build:clean && pnpm build:raw",
+    "build:raw": "vite build && tsc -p tsconfig-build.json",
+    "build:clean": "rm -rf build",
     "lint:eslint": "eslint **/*.{ts,js,tsx,jsx}",
     "lint:prettier": "prettier **/*.{json,jsonc,scss,yml}",
-    "lint:fix": "pnpm run lint:prettier --write && pnpm run lint:eslint --fix"
+    "lint:fix": "pnpm run lint:prettier --write && pnpm run lint:eslint --fix",
+    "version:release": "standard-version"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByDSA/daukit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ByDSA/daukit/issues"
+  },
+  "homepage": "https://github.com/ByDSA/daukit#readme",
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
@@ -40,8 +50,11 @@
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "4.2.1",
+    "husky": "9.0.10",
+    "prettier": "3.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "standard-version": "9.5.0",
     "typescript": "5.3.3",
     "vite": "5.1.1"
   },

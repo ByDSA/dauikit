@@ -14,6 +14,7 @@ export default defineConfig( {
     rollupOptions: {
       external: ["react"],
     },
+    outDir: "build",
   },
   plugins: [react()],
 } );
