@@ -13,16 +13,13 @@
   "license": "UNLICENSED",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": [
-    "build"
-  ],
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "pnpm lint:fix && pnpm install && pnpm build && publish:afterBuild",
-    "publish:afterBuild": "sed -e '/\"scripts\"/,/},$/d' package.json > ./build/package.json && cp -t ./build *.md LICENSE && [ cp -t ./build .npmrc 2>/dev/null || : ]",
+    "publish:afterBuild": "lib/publish_afterBuild.sh",
     "prepack": "pnpm publish build --no-git-checks && kill -9 $PPID && exit",
     "build": "pnpm build:clean && pnpm build:raw",
     "build:raw": "tsc -p tsconfig-build.json && vite build",
