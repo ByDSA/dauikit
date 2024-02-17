@@ -42,17 +42,16 @@
         font-weight: bold;
         height: 1em;
         display: flex;
-        justify-content: center;
         align-items: center;
       }
 
       .control {
+        justify-content: center;
         width: 2.5rem;
         padding: 0;
       }
 
       .title {
-        display: block;
         width: calc(100% - 3rem);
       }
     }
