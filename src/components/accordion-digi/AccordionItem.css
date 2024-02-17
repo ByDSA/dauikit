@@ -1,70 +1,101 @@
 .dauikit-accordion-digi {
+  .accordion-item:not(:first-of-type),
+  astro-island:not(:first-of-type) > .accordion-item {
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .accordion-item:not(:last-of-type),
+  astro-island:not(:last-of-type) > .accordion-item {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
   .accordion-item {
-    --color-title: var(--color-blue);
-    --color-title-hover: var(--color-blue-dark);
-    --color-disabled: gray;
-    --color-title-open: var(--color-yellow);
-    --color-title-open-hover: var(--color-yellow-light);
-    --color-header-hover: var(--color-blue-light);
-    --color-header-open: var(--color-header-hover);
+    --border-color: gray;
+    --border-width: 1px;
     --transition-time: 0.5s;
 
-    border: var(--border);
+    border: var(--border-width) solid var(--border-color);
 
     border-radius: 0.5rem;
+    overflow: hidden;
 
     & > header {
-      padding: 0.75rem 0.5rem;
+      color: black;
+      background: white;
+      overflow: hidden;
       margin: 0;
+      padding: 0.75rem 0.5rem;
       border-bottom: 0;
       cursor: pointer;
       user-select: none;
-      display: flex;
+      display: -webkit-box;
 
-      &:hover {
-        background-color: var(--color-header-hover);
-
-        .title {
-          color: var(--color-title-hover);
-        }
+      @media (width < 500px) {
+        padding: 0.5rem 0rem;
       }
 
       .title,
       .control {
         font-weight: bold;
-        color: var(--color-title);
+        height: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .control {
-        margin-left: 0.5rem;
-        width: 2rem;
+        width: 2.5rem;
+        padding: 0;
+      }
+
+      .title {
+        display: block;
+        width: calc(100% - 3rem);
       }
     }
 
-    .accordion-item-content {
+    &.opening,
+    &.closing {
+      & > section {
+        transition: height var(--transition-time) ease;
+      }
+    }
+
+    & > section {
       overflow: hidden;
-      transition: height var(--transition-time) ease;
-      display: flex;
-      flex-direction: column;
-    }
 
-    .margin {
-      margin: 1rem 2rem;
-    }
+      > hr {
+        border-top: var(--border-width) solid var(--border-color);
+        margin: 0;
+      }
 
-    &.open {
-      header {
-        background-color: var(--color-header-open);
+      & > article {
+        padding: 1rem;
 
-        &:hover .title {
-          color: var(--color-title-open-hover);
+        @media (width < 500px) {
+          padding: 1rem;
         }
+      }
+    }
+
+    &.open:not(.closing) {
+      header {
+        background-color: lightgray;
       }
 
       .title,
       .control {
         font-weight: bold;
-        color: var(--color-title-open);
+      }
+    }
+
+    &,
+    &.open:not(.closing):not(.disabled) {
+      & > header:hover {
+        background-color: grey;
       }
     }
 
@@ -72,18 +103,11 @@
       .title,
       .control {
         font-weight: normal;
-        color: var(--color-disabled);
+        color: grey;
       }
 
       & > header {
         cursor: auto;
-      }
-    }
-
-    &.open,
-    &.closing {
-      .accordion-item-header {
-        border-bottom: var(--border);
       }
     }
   }

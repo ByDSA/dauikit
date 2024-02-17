@@ -1,9 +1,18 @@
 import { JSX } from "react";
-import "./Accordion.css";
 
 type Props = {
   children: JSX.Element[];
+  style?: React.CSSProperties;
 };
-const Accordion = ( { children }: Props) => <div className={"dauikit-accordion-digi"}>{children}</div>;
+const Accordion = ( { children, style }: Props) => {
+  // eslint-disable-next-line no-param-reassign
+  children = children.map((el, i) => ( {
+    ...el,
+    style,
+    key: i,
+  } )) as unknown as Props["children"];
+
+  return <div className={"dauikit-accordion-digi"}>{children}</div>;
+};
 
 export default Accordion;
