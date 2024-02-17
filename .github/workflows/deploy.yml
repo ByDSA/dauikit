@@ -4,15 +4,54 @@ on:
   push:
     branches:
       - "main"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
-      with:
-        path: storybook-static
-        build_command: npm run storybook:build
+      # Manual Checkout
+      - uses: actions/checkout@v4
+
+      # Set up Node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - uses: pnpm/action-setup@v2
+        name: Instalar pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
+      - id: build-publish
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+        with:
+          install_command: pnpm install --no-frozen-lockfile # default: npm ci
+          build_command: pnpm storybook:build # default: npm run build-storybook
+          path: storybook-static # default: dist/storybook
+          checkout: false # default: true
