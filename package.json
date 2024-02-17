@@ -29,7 +29,7 @@
     "lint:fix": "pnpm run lint:prettier --write && pnpm run lint:eslint --fix",
     "version:release": "standard-version",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
