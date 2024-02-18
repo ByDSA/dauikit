@@ -28,7 +28,7 @@
     "lint:prettier": "prettier **/*.{json,jsonc,scss,yml}",
     "lint:fix": "pnpm run lint:prettier --write && pnpm run lint:eslint --fix",
     "version:release": "standard-version",
-    "storybook": "storybook dev -p 6006",
+    "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
   "publishConfig": {
