@@ -5,7 +5,7 @@ import { Args, argTypes, defaultValues } from "./Accordion.stories.args";
 import AccordionItem from "./AccordionItem";
 
 const meta: Meta<Args> = {
-  title: "Accordion/AccordionDigi",
+  title: "Accordions/AccordionDigi",
   parameters: {
     layout: "padded",
   },
