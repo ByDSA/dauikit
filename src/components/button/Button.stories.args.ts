@@ -93,11 +93,9 @@ export const argTypes: ArgTypes<Args> = {
   disabled: {
     name: "Disabled",
     table: {
-      type: {
-        summary: "Deshabilita el componente",
-      },
       category: Category.BehaviorProperties,
     },
+    description: "Indica si el botón está deshabilitado",
   },
   borderRadius: {
     name: "Border Radius",
