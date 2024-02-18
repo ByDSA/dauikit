@@ -19,6 +19,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "pnpm lint:fix && pnpm install && pnpm build && publish:afterBuild",
+    "publish:local": "pnpm build && pnpm publish:afterBuild && cd ./build && pnpm link --global",
     "publish:afterBuild": "lib/publish_afterBuild.sh",
     "prepack": "pnpm publish build --no-git-checks && kill -9 $PPID && exit",
     "build": "pnpm build:clean && pnpm build:raw",
