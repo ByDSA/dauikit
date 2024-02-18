@@ -24,21 +24,21 @@ const Template = (args: Args) => {
       --transition-time: ${args.transitionTime};
     }
 
-    .dauikit-accordion-digi .accordion-item header .title {
+    .dauikit-accordion-digi .accordion-item header:not(.disabled) .title {
       color: ${args.headerTitleColor};
     }
 
-    .dauikit-accordion-digi .accordion-item.open:not(.closing) header .title {color: ${args.headerTitleColorOpen};}
+    .dauikit-accordion-digi .accordion-item.open:not(.closing):not(.disabled) header .title {color: ${args.headerTitleColorOpen};}
 
     .dauikit-accordion-digi .accordion-item:not(.disabled) header:hover .title {color: ${args.headerTitleColorHover};}
 
-    .dauikit-accordion-digi .accordion-item header{background-color: ${args.headerBackgroundColor};}
+    .dauikit-accordion-digi .accordion-item header:not(.disabled){background-color: ${args.headerBackgroundColor};}
 
-    .dauikit-accordion-digi .accordion-item.open:not(.closing) header {background-color: ${args.headerBackgroundColorOpen};}
+    .dauikit-accordion-digi .accordion-item.open:not(.closing):not(.disabled) header {background-color: ${args.headerBackgroundColorOpen};}
 
     .dauikit-accordion-digi .accordion-item:not(.disabled) header:hover {background-color: ${args.headerBackgroundColorHover};}
 
-    .dauikit-accordion-digi .accordion-item.open:not(.closing) header:hover .title {color: ${args.headerTitleColorOpenHover};}
+    .dauikit-accordion-digi .accordion-item.open:not(.closing):not(.disabled) header:hover .title {color: ${args.headerTitleColorOpenHover};}
 
     .dauikit-accordion-digi .accordion-item.disabled header .title {color: ${args.headerTitleColorDisabled};}
   }

@@ -56,7 +56,7 @@ const headerTitleColor: ArgTypes<Args>["headerTitleColor"] = {
   name: "Header Title Color",
   table: {
     type: {
-      summary: ".dauikit-accordion-digi .accordion-item header .title {color}",
+      summary: ".dauikit-accordion-digi .accordion-item:not(.disabled) header .title {color}",
     },
     category: Category.CustomCSSProperties,
   },
@@ -69,7 +69,7 @@ const headerTitleColorHover: ArgTypes<Args>["headerTitleColorHover"] = {
   },
   table: {
     type: {
-      summary: ".dauikit-accordion-digi .accordion-item:not(.disabled) header:hover .title {color}",
+      summary: ".dauikit-accordion-digi .accordion-item:not(.disabled):not(.disabled) header:hover .title {color}",
     },
     category: Category.CustomCSSProperties,
   },
@@ -92,7 +92,7 @@ const headerTitleColorOpen: ArgTypes<any>[0] = {
   },
   table: {
     type: {
-      summary: ".dauikit-accordion-digi .accordion-item.open:not(.closing) header .title {color}",
+      summary: ".dauikit-accordion-digi .accordion-item.open:not(.closing):not(.disabled) header .title {color}",
     },
     category: Category.CustomCSSProperties,
   },
@@ -110,7 +110,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Header Background Color",
     table: {
       type: {
-        summary: ".dauikit-accordion-digi .accordion-item header{background-color}",
+        summary: ".dauikit-accordion-digi .accordion-item header:not(.disabled) {background-color}",
       },
       category: Category.CustomCSSProperties,
     },
@@ -144,7 +144,7 @@ export const argTypes: ArgTypes<Args> = {
     },
     table: {
       type: {
-        summary: ".dauikit-accordion-digi .accordion-item.open:not(.closing) header:hover .title {color}",
+        summary: ".dauikit-accordion-digi .accordion-item.open:not(.closing):not(.disabled) header:hover .title {color}",
       },
       category: Category.CustomCSSProperties,
     },
