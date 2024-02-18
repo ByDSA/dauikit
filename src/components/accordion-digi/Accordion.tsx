@@ -2,18 +2,18 @@ import { JSX } from "react";
 
 type Props = {
   children?: JSX.Element[];
-  style?: React.CSSProperties;
 };
-const Accordion = ( { children, style }: Props) => {
+const Accordion = ( { children }: Props) => {
   let actualChildren: Props["children"];
 
   if (Array.isArray(children)) {
     actualChildren = children.map((el, i) => ( {
       ...el,
-      style,
       key: i.toString(),
     } ));
   }
+  else
+    actualChildren = children;
 
   return <div className={"dauikit-accordion-digi"}>{actualChildren}</div>;
 };
