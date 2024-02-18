@@ -2,30 +2,31 @@ import React from "react";
 import "./Card.css";
 
 type Props = {
-  title?: string;
-  header?: React.ReactNode | null;
+  header?: React.ReactNode | string | null;
   children: React.ReactNode;
 };
 
-export default function Card( { title, header = null, children }: Props) {
+export default function Card( { header = null, children }: Props) {
   let body: React.ReactNode | null = null;
-  let actualHeader = header;
+  const headerContent = (() => {
+    if (typeof header === "string")
+      return <h2>{header}</h2>;
 
-  if (title && !header) {
-    actualHeader = (
-      <header>
-        <h2>{title}</h2>
-      </header>
-    );
-  }
+    return header;
+  } )();
+  const actualHeader = headerContent
+    ? <header>
+      {headerContent}
+    </header>
+    : null;
 
   if (children)
-    body = <section className="card-body">{children}</section>;
+    body = <article>{children}</article>;
 
   return (
-    <div className="dauikit-card">
+    <section className="dauikit-card">
       {actualHeader}
       {body}
-    </div>
+    </section>
   );
 }
