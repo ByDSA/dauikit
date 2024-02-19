@@ -31,21 +31,18 @@
       border-bottom: 0;
       cursor: pointer;
       user-select: none;
-      display: -webkit-box;
-
-      @media (width < 500px) {
-        padding: 0.5rem 0rem;
-      }
+      display: flex;
+      align-items: center;
 
       .title,
       .control {
         font-weight: bold;
-        height: 1em;
         display: flex;
         align-items: center;
       }
 
       .control {
+        height: 1em;
         justify-content: center;
         width: 2.5rem;
         padding: 0;
@@ -53,6 +50,15 @@
 
       .title {
         width: calc(100% - 3rem);
+        line-height: 1.5;
+      }
+
+      @media (width < 500px) {
+        padding: 0.25rem 0rem;
+
+        .title {
+          line-height: 1.25;
+        }
       }
     }
 
@@ -91,10 +97,9 @@
       }
     }
 
-    &,
     &.open:not(.closing):not(.disabled) {
       & > header:hover {
-        background-color: grey;
+        background-color: gray;
       }
     }
 
@@ -102,7 +107,7 @@
       .title,
       .control {
         font-weight: normal;
-        color: grey;
+        color: gray;
       }
 
       & > header {

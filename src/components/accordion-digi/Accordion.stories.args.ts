@@ -165,7 +165,7 @@ export const defaultValues: Record<keyof Args, any> = {
   transitionTime: "0.5s",
   headerTitleColor: "black",
   headerTitleColorHover: "undefined",
-  headerTitleColorDisabled: "grey",
+  headerTitleColorDisabled: "gray",
   headerTitleColorOpen: "undefined",
   headerTitleColorOpenHover: "undefined",
   headerBackgroundColor: "white",

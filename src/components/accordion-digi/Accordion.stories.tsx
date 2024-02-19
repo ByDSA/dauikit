@@ -50,13 +50,13 @@ const Template = (args: Args) => {
         {globalStyles}
       </style>
       <Accordion>
-        <AccordionItem title="Item 1" disabled={args.disabled}>
-          <p>Párrafo 1</p>
-          <p>Párrafo 2</p>
+        <AccordionItem title="Item 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales ex sit amet est iaculis, sed egestas sem feugiat. Aenean et luctus nunc. Aliquam erat volutpat. Vestibulum et magna sit amet neque cursus vulputate. Nunc ornare feugiat tellus id mattis. Praesent ut dui in sem vestibulum finibus. Vivamus elementum nulla." disabled={args.disabled}>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales ex sit amet est iaculis, sed egestas sem feugiat. Aenean et luctus nunc. Aliquam erat volutpat. Vestibulum et magna sit amet neque cursus vulputate. Nunc ornare feugiat tellus id mattis. Praesent ut dui in sem vestibulum finibus. Vivamus elementum nulla.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales ex sit amet est iaculis, sed egestas sem feugiat. Aenean et luctus nunc. Aliquam erat volutpat. Vestibulum et magna sit amet neque cursus vulputate. Nunc ornare feugiat tellus id mattis. Praesent ut dui in sem vestibulum finibus. Vivamus elementum nulla.</p>
         </AccordionItem>
-        <AccordionItem title="Item 2" disabled={args.disabled}>
-          <p>Párrafo 1</p>
-          <p>Párrafo 2</p>
+        <AccordionItem title="Item 2 Short title" disabled={args.disabled}>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales ex sit amet est iaculis, sed egestas sem feugiat. Aenean et luctus nunc. Aliquam erat volutpat. Vestibulum et magna sit amet neque cursus vulputate. Nunc ornare feugiat tellus id mattis. Praesent ut dui in sem vestibulum finibus. Vivamus elementum nulla.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales ex sit amet est iaculis, sed egestas sem feugiat. Aenean et luctus nunc. Aliquam erat volutpat. Vestibulum et magna sit amet neque cursus vulputate. Nunc ornare feugiat tellus id mattis. Praesent ut dui in sem vestibulum finibus. Vivamus elementum nulla.</p>
         </AccordionItem>
       </Accordion>
     </>);
