@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/ByDSA/daukit/compare/v0.0.4...v0.0.5) (2024-02-19)
+
+
+### Bug Fixes
+
+* corregir error en el componente Accordion.tsx ([8c132db](https://github.com/ByDSA/daukit/commit/8c132dba72537e86f19645f95805b0a0a9cac2fe))
+* eliminar la propiedad de estilo no utilizada en el componente Accordion ([c0d436d](https://github.com/ByDSA/daukit/commit/c0d436d97ec7e0a8b9b8a45111ee72f463589cdc))
+* unificar title y header en Card. Hacer su story. ([ab882a2](https://github.com/ByDSA/daukit/commit/ab882a296402e4c02718599effc5396b4bb8e21d))
+
 ### [0.0.4](https://github.com/ByDSA/daukit/compare/v0.0.3...v0.0.4) (2024-02-17)
 
 
