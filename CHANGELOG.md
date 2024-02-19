@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/ByDSA/daukit/compare/v0.0.5...v0.0.6) (2024-02-19)
+
+
+### Bug Fixes
+
+* actualizar estilos de Acordion.stories.args.ts y Acordion.stories.tsx y AcordionItem.css ([8f7d51b](https://github.com/ByDSA/daukit/commit/8f7d51bd5329fb93a15b330e110f97cc9fea244b))
+
 ### [0.0.5](https://github.com/ByDSA/daukit/compare/v0.0.4...v0.0.5) (2024-02-19)
 
 
