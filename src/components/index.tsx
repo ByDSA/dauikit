@@ -4,17 +4,21 @@ export {
 } from "./accordion-digi";
 
 export {
-  default as CarouselImages, 
+  default as CarouselImages,
 } from "./carousel-images/CarouselImages";
 
 export {
-  default as Carousel, 
+  default as Carousel,
 } from "./carousel/Carousel";
 
 export {
-  default as Button, 
+  default as Button,
 } from "./button/Button";
 
 export {
-  default as Card, 
+  default as Card,
 } from "./card/Card";
+
+export {
+  CardContainer,
+} from "./card/container";
