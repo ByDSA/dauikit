@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/ByDSA/daukit/compare/v0.0.7...v0.0.8) (2024-02-21)
+
+
+### Bug Fixes
+
+* actualizar estilos de Card ([32884e8](https://github.com/ByDSA/daukit/commit/32884e81483e880231bb3104b75ec23c556ebb7c))
+
 ### [0.0.7](https://github.com/ByDSA/daukit/compare/v0.0.6...v0.0.7) (2024-02-21)
 
 
