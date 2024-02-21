@@ -1,0 +1,12 @@
+.dauikit-navbardigi .logo-box {
+  height: var(--height-inner);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  img {
+    height: var(--height-inner);
+  }
+}

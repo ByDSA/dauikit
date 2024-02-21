@@ -22,3 +22,7 @@ export {
 export {
   CardContainer,
 } from "./card/container";
+
+export {
+  NavbarDigi,
+} from "./navbar-digi";

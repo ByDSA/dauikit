@@ -1,0 +1,196 @@
+@keyframes MoveDown {
+  from {
+    bottom: calc(var(--bottom) + var(--delta-y));
+  }
+  to {
+    bottom: var(--bottom);
+  }
+}
+@keyframes MoveUp {
+  from {
+    top: calc(var(--top) + var(--delta-y));
+  }
+  to {
+    top: var(--top);
+  }
+}
+
+.side-nav {
+  --background-color: var(--color-hover);
+  --border-weight: 0.33rem;
+  --side-nav-padding-x: 2rem;
+  --width: min(max(33vw, 200px), 300px);
+  --color: var(--color-light);
+  --shape-diameter: var(--diameter);
+
+  position: fixed;
+  top: 0;
+  width: calc(var(--width) * 2);
+  height: 100vh;
+  background-color: var(--background-color);
+  border-left: var(--border-weight) solid black;
+  transition: left var(--transition-position-duration);
+  left: 100vw; /* si se hace desde la derecha, hace un salto al cerrarse por la aparición repentina del scroll */
+  z-index: 11;
+
+  header {
+    --header-width: calc(
+      var(--width) - var(--border-weight) -
+        (var(--padding-x) + var(--shape-diameter)) - var(--side-nav-padding-x)
+    );
+    --header-width-inner: min(max(15vw, 40rem), var(--header-width));
+    --header-padding-x: calc(
+      (var(--header-width) - var(--header-width-inner)) / 2
+    );
+    position: absolute;
+    top: var(--padding-y);
+    left: calc(var(--side-nav-padding-x) + var(--header-padding-x));
+    z-index: 12;
+    width: var(--header-width-inner);
+    height: var(--height-inner);
+
+    &.header-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: var(--color);
+    }
+
+    &.header-img {
+      --img: url(/logo/logo.webp);
+      background-image: var(--img);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  nav {
+    --margin-top: var(--height); /* height: Altura del navbar */
+    margin-top: var(--margin-top);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - var(--margin-top));
+    width: var(--width);
+    position: fixed;
+    top: 0;
+
+    /* Importante:
+    En Chrome no se renderiza el contenido del nav, si tiene scroll, hasta que no aparece el scroll en el viewport.
+    Se ha probado poner 'direction: ltr' para mostrar el scrollbar a la izquierda, pero así ni si quiera llega a renderizarse.
+    */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ul {
+      --level: 1;
+    }
+
+    ul ul {
+      --level: 2;
+    }
+
+    ul ul ul {
+      --level: 3;
+    }
+
+    ul {
+      --padding-x-level: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-direction: column;
+      background: none;
+      list-style: none;
+      font-weight: 400;
+      padding: 0;
+
+      li {
+        --text-color: var(--color);
+        --text-color-hover: var(--color-dark);
+        --background-color-hover: var(--color-light);
+        --text-color-active: var(--color-yellow);
+        display: flex;
+        flex-direction: column;
+
+        > :is(a, span:has(~ ul)) {
+          --padding-y: 0.5rem;
+
+          @media (height < 750px) {
+            --padding-y: 0.4rem;
+          }
+
+          padding: var(--padding-y) 0;
+          padding-left: calc(
+            var(--side-nav-padding-x) + (var(--level) - 1) *
+              var(--padding-x-level)
+          );
+
+          cursor: pointer;
+          text-decoration: none;
+          padding-right: var(--side-nav-padding-x);
+
+          color: var(--text-color);
+
+          &:hover,
+          &.active:hover {
+            color: var(--text-color-hover);
+            background-color: var(--background-color-hover);
+          }
+
+          &.active {
+            color: var(--text-color-active);
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .scroll-arrow {
+      --border-color: black;
+      --animation-duration: 0.7s;
+      --delta-y: 0.5rem;
+      --margin-y: 1rem;
+      --margin-x: 2rem;
+
+      user-select: none;
+
+      display: none;
+      position: absolute;
+      left: calc(var(--width) - var(--margin-x));
+      font-size: 1.5rem;
+      color: var(--color);
+      -webkit-text-stroke: 0.75px var(--border-color);
+      background-color: transparent;
+    }
+
+    .scroll-arrow.active {
+      display: block;
+    }
+
+    .scroll-arrowDown {
+      --bottom: var(--margin-y);
+      bottom: var(--bottom);
+      animation: MoveDown var(--animation-duration) linear infinite;
+      -webkit-animation: MoveDown var(--animation-duration) linear infinite;
+    }
+
+    .scroll-arrowUp {
+      --top: calc(
+        var(--margin-y) + 1rem
+      ); /* No sé por qué se necesita añadir 1rem */
+      top: var(--top);
+
+      animation: MoveUp var(--animation-duration) linear infinite;
+      -webkit-animation: MoveUp var(--animation-duration) linear infinite;
+    }
+  }
+}
+
+.hamburger .shape:has(#menu-toggle:checked) {
+  ~ .side-nav {
+    left: calc(100vw - var(--width));
+  }
+}
