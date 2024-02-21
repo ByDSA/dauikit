@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/ByDSA/daukit/compare/v0.0.6...v0.0.7) (2024-02-21)
+
+
+### Features
+
+* añadir componente CardContainer y estilos CSS ([e9c600a](https://github.com/ByDSA/daukit/commit/e9c600a41a1ef21c122861e62c466506ec00778c))
+* añadir navbardigi ([27f969e](https://github.com/ByDSA/daukit/commit/27f969e3ce158bd85167160c56ae66883420e167))
+
+
+### Bug Fixes
+
+* actualizar estilos de tarjeta en Card.css ([c763e43](https://github.com/ByDSA/daukit/commit/c763e4353daec7a2d374fd4e9b7c4f2e631c5599))
+
 ### [0.0.6](https://github.com/ByDSA/daukit/compare/v0.0.5...v0.0.6) (2024-02-19)
 
 
