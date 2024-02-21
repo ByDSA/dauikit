@@ -13,11 +13,11 @@
   }
 
   .accordion-item {
-    --border-color: gray;
-    --border-width: 1px;
-    --transition-time: 0.5s;
+    --border-color-default: gray;
+    --border-width-default: 1px;
 
-    border: var(--border-width) solid var(--border-color);
+    border: var(--border-width, var(--border-width-default)) solid
+      var(--border-color, var(--border-color-default));
 
     border-radius: 0.5rem;
     overflow: hidden;
@@ -65,7 +65,7 @@
     &.opening,
     &.closing {
       & > section {
-        transition: height var(--transition-time) ease;
+        transition: height var(--transition-time, 0.5s) ease;
       }
     }
 
@@ -73,7 +73,8 @@
       overflow: hidden;
 
       > hr {
-        border-top: var(--border-width) solid var(--border-color);
+        border-top: var(--border-width, var(--border-width-default)) solid
+          var(--border-color, var(--border-color-default));
         margin: 0;
       }
 
