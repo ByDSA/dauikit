@@ -21,7 +21,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Background Color",
     table: {
       type: {
-        summary: ".dauikit-card {background-color}",
+        summary: ".dauikit-card {--background-color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -31,7 +31,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Text Color",
     table: {
       type: {
-        summary: ".dauikit-card {color}",
+        summary: ".dauikit-card {--color}",
       },
       category: Category.CustomCSSVariables,
     },

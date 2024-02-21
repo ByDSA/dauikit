@@ -19,9 +19,9 @@ export default meta;
 const Template = (args: Args) => {
   const globalStyles = `
   #storybook-root {
-    .dauikit-card {background-color: ${args.backgroundColor};}
+    .dauikit-card {--background-color: ${args.backgroundColor};}
 
-    .dauikit-card {color: ${args.textColor};}
+    .dauikit-card {--color: ${args.textColor};}
 
     .dauikit-card {border-radius: ${args.borderRadius};}
 
