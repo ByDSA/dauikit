@@ -1,11 +1,10 @@
 .dauikit-button {
-  --transition-duration: 0.3s;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
   padding: 1rem 2rem;
   cursor: pointer;
-  transition: all var(--transition-duration) ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: black;
   font-weight: bold;
   font-size: 1.2em;

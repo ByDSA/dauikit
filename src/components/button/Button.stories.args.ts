@@ -33,7 +33,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Transition Duration",
     table: {
       type: {
-        summary: ".dauikit-button {--transition-duration}",
+        summary: ".dauikit-button {transition-duration}",
       },
       category: Category.CustomCSSVariables,
     },

@@ -19,7 +19,7 @@ const Template = (args: Args) => {
   #storybook-root {
     .dauikit-button:not([disabled]) {border-color: ${args.borderColor};}
 
-    .dauikit-button {--transition-duration: ${args.transitionDuration};}
+    .dauikit-button {transition-duration: ${args.transitionDuration};}
 
     .dauikit-button {border-width: ${args.borderWidth};}
 
