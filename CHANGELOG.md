@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/ByDSA/daukit/compare/v0.0.8...v0.0.9) (2024-02-22)
+
+
+### Bug Fixes
+
+* let override default values ([22d610f](https://github.com/ByDSA/daukit/commit/22d610fada7e48b29ee072a3c132b6be43259ca0))
+* remove css variable for transition-duration ([eab75e9](https://github.com/ByDSA/daukit/commit/eab75e97ee371af3d47b7fbb8480b1ec6064f1e3))
+
 ### [0.0.8](https://github.com/ByDSA/daukit/compare/v0.0.7...v0.0.8) (2024-02-21)
 
 
