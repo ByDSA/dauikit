@@ -26,3 +26,7 @@ export {
 export {
   NavbarDigi,
 } from "./navbar-digi";
+
+export {
+  HamburgerNavDigi, HamburgerNavDigiProps,
+} from "./hamburger-nav-digi";
