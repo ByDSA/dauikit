@@ -1,0 +1,27 @@
+@value root, menuToggle, shape from "./Hamburger.module.css";
+
+.sideNav {
+  /* Default values */
+  --background-color: gray;
+  --border-weight: 0.33rem;
+  --width: min(max(33vw, 200px), 300px);
+  --color: white;
+  --transition-position-duration: 0.3s;
+
+  position: fixed;
+  top: 0;
+  width: calc(var(--width) * 2);
+  height: 100vh;
+  background-color: var(--background-color);
+  border-left: var(--border-weight) solid black;
+  transition: left var(--transition-position-duration);
+  left: 100vw; /* si se hace desde la derecha, hace un salto al cerrarse por la aparición repentina del scroll */
+  z-index: 10;
+  color: var(--color);
+}
+
+:global(.shape):has(:global(.menuToggle):checked) {
+  ~ .sideNav {
+    left: calc(100vw - var(--width));
+  }
+}

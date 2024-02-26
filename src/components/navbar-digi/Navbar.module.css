@@ -1,25 +1,14 @@
-.dauikit-navbardigi {
-  --transition-color-duration: 0.2s;
-  --transition-position-duration: 0.3s;
-
-  --color-light: var(--color-white, white);
-  --color-dark: var(--color-black, black);
-  --color-hover: var(--color-blue, hsl(210, 100%, 50%));
-}
+@value hamburgernavdigi, shape from "./Navbar-hamburger.module.css";
+@value main from "./MainNav.module.css";
 
 .dauikit-navbardigi,
-.dauikit-navbardigi a,
-.dauikit-navbardigi span {
+.dauikit-navbardigi :is(a, span) {
   -webkit-transition:
     background-color var(--transition-color-duration),
     color var(--transition-color-duration);
   transition:
     background-color var(--transition-color-duration),
     color var(--transition-color-duration);
-}
-
-body:has(#menu-toggle:checked) {
-  overflow: hidden;
 }
 
 .dauikit-navbardigi {
@@ -32,12 +21,23 @@ body:has(#menu-toggle:checked) {
   --width-inner: calc(var(--width) - 2 * var(--padding-x));
   --background-color: transparent;
 
+  --transition-color-duration: 0.2s;
+  --transition-position-duration: 0.3s;
+
+  --color-light: var(--color-white, white);
+  --color-dark: var(--color-black, black);
+
   --color: var(--color-light);
-  > * {
-    --background-color-nonscrolled: rgba(0, 0, 0, 0.4);
+
+  :global(.shape),
+  :global(.main) {
+    --color-hover: hsl(210, 100%, 50%);
     --background-color-hover: var(--color-light);
+    --background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.main) {
     --background-color-active: rgba(255, 255, 255, 0.8);
-    --background-color: var(--background-color-nonscrolled);
   }
 
   position: fixed;
@@ -67,14 +67,37 @@ body:has(#menu-toggle:checked) {
 
     --color: var(--color-dark);
     --background-color: var(--color-light);
-
-    > * {
-      --background-color: transparent;
-    }
   }
 
   .logo-box {
     height: var(--height-inner);
     top: var(--padding-y);
+  }
+
+  :global(.main) {
+    @media (width < 900px) {
+      display: none;
+    }
+  }
+
+  :global(.hamburgernavdigi) {
+    @media (width >= 900px) {
+      display: none;
+    }
+  }
+
+  &.scrolled {
+    :global(.main) > ul,
+    :global(.shape) {
+      --background-color: transparent;
+    }
+
+    :global(.shape):not(:has(input:checked)) {
+      --color: var(--color-dark);
+
+      &:hover {
+        --color: var(--color-hover-closed-scrolled);
+      }
+    }
   }
 }

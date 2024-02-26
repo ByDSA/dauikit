@@ -1,0 +1,121 @@
+.hamburgernavdigi {
+  --shape-diameter: 51.78px;
+  --navbar-padding-x: var(--padding-x);
+
+  display: flex;
+  position: fixed;
+  top: var(--padding-y);
+  left: calc(100vw - (var(--navbar-padding-x) + var(--shape-diameter)));
+
+  .shape {
+    --diameter: var(--shape-diameter);
+    --color-open: var(--color-dark);
+    --color-open-hover: var(--color-light);
+    --color-hover-closed-scrolled: var(--color-hover);
+  }
+
+  .sideNav {
+    --padding-x: 2rem;
+    --background-color: hsl(210, 100%, 50%);
+
+    header {
+      --header-width: calc(
+        var(--width) - var(--border-weight) -
+          (var(--navbar-padding-x) + var(--shape-diameter)) - var(--padding-x)
+      );
+      --header-width-inner: min(max(15vw, 40rem), var(--header-width));
+      --header-padding-x: calc(
+        (var(--header-width) - var(--header-width-inner)) / 2
+      );
+      position: absolute;
+      top: var(--padding-y);
+      left: calc(var(--padding-x) + var(--header-padding-x));
+      z-index: 12;
+      width: var(--header-width-inner);
+      height: var(--height-inner);
+
+      &:global(.header-img) {
+        --img: url(/logo/logo.webp);
+        background-image: var(--img);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
+    nav {
+      --margin-top: var(--height); /* height: Altura del navbar */
+      margin-top: var(--margin-top);
+      overflow-x: hidden;
+      overflow-y: hidden;
+      height: calc(100% - var(--margin-top));
+      width: var(--width);
+      position: relative;
+
+      .content {
+        ul {
+          --level: 1;
+        }
+
+        ul ul {
+          --level: 2;
+        }
+
+        ul ul ul {
+          --level: 3;
+        }
+
+        ul {
+          --padding-x-level: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-direction: column;
+          background: none;
+          list-style: none;
+          font-weight: 400;
+          padding: 0;
+
+          li {
+            --text-color: var(--color);
+            --text-color-hover: black;
+            --background-color-hover: white;
+            --text-color-active: var(--text-color-active, yellow);
+            display: flex;
+            flex-direction: column;
+
+            > :is(a, span) {
+              --padding-y: 0.5rem;
+
+              @media (height < 750px) {
+                --padding-y: 0.4rem;
+              }
+
+              padding: var(--padding-y) 0;
+              padding-left: calc(
+                var(--padding-x) + (var(--level) - 1) * var(--padding-x-level)
+              );
+
+              cursor: pointer;
+              text-decoration: none;
+              padding-right: var(--padding-x);
+
+              color: var(--text-color);
+
+              &:hover,
+              &.active:hover {
+                color: var(--text-color-hover);
+                background-color: var(--background-color-hover);
+              }
+
+              &.active {
+                color: var(--text-color-active);
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

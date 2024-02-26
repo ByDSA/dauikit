@@ -6,18 +6,9 @@ export type TreeNode = {
   children?: TreeNode[];
 };
 
-export type SideNavProps = {
-  disabled?: true;
-  header: {
-    custom?: React.ReactNode;
-    logo?: LogoBoxImg;
-    text?: string;
-  };
-};
-
 export type Props = {
   tree: TreeNode[];
   currentUrl: string;
   root: string;
-  sideNav?: SideNavProps;
+  logo?: LogoBoxImg;
 };

@@ -1,0 +1,69 @@
+@keyframes MoveDown {
+  from {
+    bottom: calc(var(--bottom) + var(--delta-y));
+  }
+  to {
+    bottom: var(--bottom);
+  }
+}
+@keyframes MoveUp {
+  from {
+    top: calc(var(--top) + var(--delta-y));
+  }
+  to {
+    top: var(--top);
+  }
+}
+
+.scrollArrow {
+  --border-color: black;
+  --animation-duration: 0.7s;
+  --delta-y: 0.5rem;
+  --margin-y: 1rem;
+  --margin-x: 2rem;
+
+  user-select: none;
+
+  display: none;
+  position: absolute;
+  left: calc(var(--width) - var(--margin-x));
+  font-size: 1.5rem;
+  color: var(--color);
+  -webkit-text-stroke: 0.75px var(--border-color);
+  background-color: transparent;
+}
+
+.scrollArrow.active {
+  display: block;
+}
+
+.scrollArrowDown {
+  --bottom: var(--margin-y);
+  bottom: var(--bottom);
+  animation: MoveDown var(--animation-duration) linear infinite;
+  -webkit-animation: MoveDown var(--animation-duration) linear infinite;
+}
+
+.scrollArrowUp {
+  --top: var(--margin-y);
+  top: var(--top);
+
+  animation: MoveUp var(--animation-duration) linear infinite;
+  -webkit-animation: MoveUp var(--animation-duration) linear infinite;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  display: block;
+
+  overflow-y: scroll;
+
+  /* Importante:
+          En Chrome no se renderiza el contenido del nav, si tiene scroll, hasta que no aparece el scroll en el viewport.
+          Se ha probado poner 'direction: ltr' para mostrar el scrollbar a la izquierda, pero así ni si quiera llega a renderizarse.
+          */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+}

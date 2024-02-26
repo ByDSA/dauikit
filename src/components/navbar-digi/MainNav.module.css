@@ -1,10 +1,6 @@
-.dauikit-navbardigi .main {
+.main {
   display: flex;
   margin: 0;
-
-  @media (width < 900px) {
-    display: none;
-  }
 
   ul {
     display: flex;
@@ -101,8 +97,4 @@
       }
     }
   }
-}
-
-.dauikit-navbardigi.scrolled .main > ul {
-  --background-color: transparent;
 }
