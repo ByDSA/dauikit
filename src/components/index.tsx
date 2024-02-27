@@ -11,9 +11,7 @@ export {
   default as Carousel,
 } from "./carousel/Carousel";
 
-export {
-  TextButton,
-} from "./buttons";
+export * from "./buttons";
 
 export {
   default as Card,

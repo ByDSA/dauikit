@@ -1,0 +1,23 @@
+.button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  &:not([disabled]):hover {
+    background-color: gray;
+    border-color: darkblue;
+  }
+
+  &[disabled] {
+    background-color: lightgray;
+    border-color: gray;
+    color: gray;
+    cursor: not-allowed;
+  }
+}
