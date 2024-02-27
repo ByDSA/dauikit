@@ -1,3 +1,3 @@
 export {
-  default as Button,
+  default as Button, type Props as ButtonProps,
 } from "./Button";

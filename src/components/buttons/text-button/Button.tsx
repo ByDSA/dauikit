@@ -1,10 +1,8 @@
-import { Themeable, classNames } from "#utils";
-import styles from "./styles.module.css";
+import { Button, ButtonProps } from "../button";
 
-type Props = Themeable & {
+type Props = Omit<ButtonProps, "children"> & {
   value: string;
-  disabled?: boolean;
 };
-export default function Button( { value, disabled, className }: Props) {
-  return <button className={classNames(styles.button, className)} disabled={disabled}>{value}</button>;
+export default function TextButton( { value, ...restOfProps }: Props) {
+  return <Button {...restOfProps}>{value}</Button>;
 }
