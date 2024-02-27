@@ -1,5 +1,5 @@
+import { Themeable, classNames } from "#utils";
 import { HamburgerNavDigi, HamburgerNavDigiProps } from "../hamburger-nav-digi";
-import { Themeable, classNames } from "../utils";
 import MainNav, { type Props as MainNavProps } from "./MainNav";
 import styles from "./Nav.module.css";
 import NavUl from "./NavUl";

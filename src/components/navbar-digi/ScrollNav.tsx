@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Themeable, classNames } from "../utils";
+import { Themeable, classNames } from "#utils";
 import styles from "./ScrollNav.module.css";
 
 type Props = {

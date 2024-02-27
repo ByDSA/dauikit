@@ -5,6 +5,7 @@ import { extname, relative } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const inputSourceFiles = Object.fromEntries(
   glob.sync("src/**/*.{ts,tsx}").map(file => {
@@ -43,5 +44,5 @@ export default defineConfig( {
   },
   plugins: [react(), libInjectCss(), dts( {
     include: ["src"],
-  } )],
+  } ), tsconfigPaths()],
 } );

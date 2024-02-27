@@ -1,4 +1,4 @@
-import { Themeable, classNames } from "../utils";
+import { Themeable, classNames } from "#utils";
 import styles from "./LogoBox.module.css";
 
 export type LogoBoxImg = {

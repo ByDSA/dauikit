@@ -1,6 +1,6 @@
 import { useEffect } from "react";
+import { classNames } from "#utils";
 import { SideNavProps } from "../hamburger-nav-digi/SideNav";
-import { classNames } from "../utils";
 import LogoBox, { LogoBoxImg } from "./LogoBox";
 import Nav, { type Props as NavProps } from "./Nav";
 import stylesHamburgerNav from "./Navbar-hamburger.module.css";

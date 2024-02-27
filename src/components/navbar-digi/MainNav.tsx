@@ -1,4 +1,4 @@
-import { classNames } from "../utils";
+import { classNames } from "#utils";
 import styles from "./MainNav.module.css";
 import NavUl from "./NavUl";
 import { Props as CommonProps } from "./Props";
