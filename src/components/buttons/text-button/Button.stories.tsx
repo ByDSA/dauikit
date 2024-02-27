@@ -4,7 +4,7 @@ import Button from "./Button";
 import { Args, argTypes, defaultValues } from "./Button.stories.args";
 
 const meta: Meta<Args> = {
-  title: "Buttons/Button",
+  title: "Buttons/TextButton",
   parameters: {
     layout: "padded",
   },
