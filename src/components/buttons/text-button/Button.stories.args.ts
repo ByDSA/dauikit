@@ -23,7 +23,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Border Color",
     table: {
       type: {
-        summary: ".dauikit-button:not([disabled]) {border-color}",
+        summary: ".{className}:not([disabled]) {border-color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -33,7 +33,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Transition Duration",
     table: {
       type: {
-        summary: ".dauikit-button {transition-duration}",
+        summary: ".{className} {transition-duration}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -44,7 +44,7 @@ export const argTypes: ArgTypes<Args> = {
     type: "string",
     table: {
       type: {
-        summary: ".dauikit-button {border-width}",
+        summary: ".{className} {border-width}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -54,7 +54,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Background Color",
     table: {
       type: {
-        summary: ".dauikit-button:not([disabled]) {background-color}",
+        summary: ".{className}:not([disabled]) {background-color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -64,7 +64,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Background Color Hover",
     table: {
       type: {
-        summary: ".dauikit-button:not([disabled]):hover {background-color}",
+        summary: ".{className}:not([disabled]):hover {background-color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -74,7 +74,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Text Color",
     table: {
       type: {
-        summary: ".dauikit-button:not([disabled]) {color}",
+        summary: ".{className}:not([disabled]) {color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -84,7 +84,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Text Color Hover",
     table: {
       type: {
-        summary: ".dauikit-button:not([disabled]):hover {color}",
+        summary: ".{className}:not([disabled]):hover {color}",
       },
       category: Category.CustomCSSVariables,
     },
@@ -101,7 +101,7 @@ export const argTypes: ArgTypes<Args> = {
     name: "Border Radius",
     table: {
       type: {
-        summary: ".dauikit-button {border-radius}",
+        summary: ".{className} {border-radius}",
       },
       category: Category.CustomCSSVariables,
     },

@@ -15,24 +15,23 @@ const meta: Meta<Args> = {
 export default meta;
 
 const Template = (args: Args) => {
+  const className = "this-component";
   const globalStyles = `
-  #storybook-root {
-    .dauikit-button:not([disabled]) {border-color: ${args.borderColor};}
+    .${className}:not([disabled]) {border-color: ${args.borderColor};}
 
-    .dauikit-button {transition-duration: ${args.transitionDuration};}
+    .${className} {transition-duration: ${args.transitionDuration};}
 
-    .dauikit-button {border-width: ${args.borderWidth};}
+    .${className} {border-width: ${args.borderWidth};}
 
-    .dauikit-button:not([disabled]) {background-color: ${args.backgroundColor};}
+    .${className}:not([disabled]) {background-color: ${args.backgroundColor};}
 
-    .dauikit-button:not([disabled]):hover {background-color: ${args.backgroundColorHover};}
+    .${className}:not([disabled]):hover {background-color: ${args.backgroundColorHover};}
 
-    .dauikit-button:not([disabled]) {color: ${args.textColor};}
+    .${className}:not([disabled]) {color: ${args.textColor};}
 
-    .dauikit-button:not([disabled]):hover {color: ${args.textColorHover};}
+    .${className}:not([disabled]):hover {color: ${args.textColorHover};}
 
-    .dauikit-button {border-radius: ${args.borderRadius};}
-  }
+    .${className} {border-radius: ${args.borderRadius};}
 `;
 
   return (
@@ -40,7 +39,7 @@ const Template = (args: Args) => {
       <style>
         {globalStyles}
       </style>
-      <Button value="Click me" disabled={args.disabled}/>
+      <Button className={className} value="Click me" disabled={args.disabled}/>
     </>);
 };
 
