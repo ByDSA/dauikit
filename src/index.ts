@@ -1,1 +1,3 @@
-export * from "./components";
+export {
+  classNames, type Themeable,
+} from "./components/utils";

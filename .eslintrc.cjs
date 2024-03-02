@@ -29,6 +29,8 @@ module.exports = {
           "*/*", // Dos niveles de profundidad
           // Front:
           "*styles/**/*.css",
+          "components/*",
+          "components/buttons/*",
         ],
       },
     ],

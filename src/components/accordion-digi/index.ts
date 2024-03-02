@@ -1,7 +1,7 @@
 export {
-  default as Accordion,
+  default as AccordionDigi,
 } from "./Accordion";
 
 export {
-  default as AccordionItem,
+  default as AccordionDigiItem,
 } from "./AccordionItem";
