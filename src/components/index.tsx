@@ -14,12 +14,12 @@ export {
 export * from "./buttons";
 
 export {
-  default as Card,
-} from "./card/Card";
+  default as CardDigi,
+} from "./card-digi/Card";
 
 export {
-  CardContainer,
-} from "./card/container";
+  CardContainer as CardContainerDigi,
+} from "./card-digi/container";
 
 export {
   NavbarDigi,

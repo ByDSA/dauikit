@@ -6,7 +6,7 @@ import Card from "./Card";
 import { Args, argTypes, defaultValues } from "./Card.stories.args";
 
 const meta: Meta<Args> = {
-  title: "Cards/Card",
+  title: "Cards/CardDigi",
   parameters: {
     layout: "padded",
   },
