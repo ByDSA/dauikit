@@ -29,6 +29,7 @@ module.exports = {
           "*/*", // Dos niveles de profundidad
           // Front:
           "*styles/**/*.css",
+          "src/styles/*.css",
           "components/*",
           "components/buttons/*",
         ],
@@ -60,7 +61,7 @@ module.exports = {
         SwitchCase: 1,
       },
     ],
-    "@typescript-eslint/sort-type-union-intersection-members": "error",
+    "@typescript-eslint/sort-type-constituents": "error",
     "@typescript-eslint/type-annotation-spacing": [
       "error",
       {
