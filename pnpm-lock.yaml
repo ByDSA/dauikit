@@ -113,8 +113,11 @@ devDependencies:
   vite-plugin-lib-inject-css:
     specifier: 2.0.0
     version: 2.0.0(vite@5.1.4)
+  vite-plugin-static-copy:
+    specifier: 1.0.1
+    version: 1.0.1(vite@5.1.4)
   vite-tsconfig-paths:
-    specifier: ^4.3.1
+    specifier: 4.3.1
     version: 4.3.1(typescript@5.3.3)(vite@5.1.4)
 
 packages:
@@ -10353,6 +10356,19 @@ packages:
       vite: '*'
     dependencies:
       magic-string: 0.30.7
+      picocolors: 1.0.0
+      vite: 5.1.4(@types/node@20.5.1)
+    dev: true
+
+  /vite-plugin-static-copy@1.0.1(vite@5.1.4):
+    resolution: {integrity: sha512-3eGL4mdZoPJMDBT68pv/XKIHR4MgVolStIxxv1gIBP4R8TpHn9C9EnaU0hesqlseJ4ycLGUxckFTu/jpuJXQlA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+    dependencies:
+      chokidar: 3.6.0
+      fast-glob: 3.3.2
+      fs-extra: 11.2.0
       picocolors: 1.0.0
       vite: 5.1.4(@types/node@20.5.1)
     dev: true

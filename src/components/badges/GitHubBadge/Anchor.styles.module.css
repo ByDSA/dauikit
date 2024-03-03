@@ -1,0 +1,13 @@
+.anchor {
+  display: inline-block;
+}
+
+.disabled {
+  cursor: not-allowed;
+  filter: grayscale(calc(100% / 4 * 3));
+  opacity: calc(1 / 4 * 3);
+}
+
+.disabled > span {
+  pointer-events: none;
+}

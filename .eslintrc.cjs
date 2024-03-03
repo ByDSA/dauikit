@@ -31,7 +31,7 @@ module.exports = {
           "*styles/**/*.css",
           "src/styles/*.css",
           "components/*",
-          "components/buttons/*",
+          "components/{buttons,badges}/*",
         ],
       },
     ],

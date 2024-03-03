@@ -2,9 +2,11 @@
 import react from "@vitejs/plugin-react";
 import { glob } from "glob";
 import { extname, relative } from "node:path";
+import path from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 const inputSourceFiles = Object.fromEntries(
@@ -42,7 +44,23 @@ export default defineConfig( {
     minify: true,
     outDir: "build",
   },
-  plugins: [react(), libInjectCss(), dts( {
-    include: ["src"],
-  } ), tsconfigPaths()],
+  plugins: [
+    react(),
+    libInjectCss(), dts( {
+      include: ["src"],
+    } ),
+    tsconfigPaths(),
+    viteStaticCopy( {
+      targets: [
+        {
+          src: path.resolve(__dirname, "./src/styles"),
+          dest: "./",
+        },
+        {
+          src: path.resolve(__dirname, "./src/public"),
+          dest: "./",
+        },
+      ],
+    } ),
+  ],
 } );
