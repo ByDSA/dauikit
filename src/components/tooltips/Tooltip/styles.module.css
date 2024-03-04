@@ -1,0 +1,102 @@
+.tooltip {
+  position: relative;
+}
+
+*:has(> .tooltip) > .tooltip {
+  line-height: initial;
+}
+
+.tooltip .box {
+  --distance: 0.25rem;
+  --color: black;
+  --transition-duration: 0.3s;
+  --arrow-size: 0.4rem;
+  --opacity: 0.8;
+
+  --_distance-with-arrow: calc(var(--distance) + var(--arrow-size));
+
+  z-index: 100;
+  opacity: 0;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  color: white;
+  background-color: var(--color);
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  transition: opacity var(--transition-duration);
+}
+
+.tooltip:hover .box {
+  opacity: var(--opacity);
+}
+
+.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: var(--_distance-with-arrow);
+}
+
+.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: var(--_distance-with-arrow);
+}
+
+.right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: var(--_distance-with-arrow);
+}
+
+.left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: var(--_distance-with-arrow);
+}
+
+.arrow:is(.top, .bottom, .left, .right)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0px;
+  border: var(--arrow-size) solid transparent;
+  box-sizing: border-box;
+}
+
+.arrow:is(.top, .bottom)::before {
+  left: 50%;
+}
+
+.arrow.top::before {
+  border-top: var(--arrow-size) solid var(--color);
+  bottom: 0;
+  transform: translate(-50%, 100%);
+}
+
+.arrow.bottom::before {
+  border-bottom: var(--arrow-size) solid var(--color);
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.arrow:is(.left, .right)::before {
+  top: 50%;
+}
+
+.arrow.left::before {
+  border-left: var(--arrow-size) solid var(--color);
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.arrow.right::before {
+  border-right: var(--arrow-size) solid var(--color);
+  left: 0;
+  transform: translate(-100%, -50%);
+}
