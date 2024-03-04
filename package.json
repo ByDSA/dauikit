@@ -23,7 +23,7 @@
     "publish:afterBuild": "lib/publish_afterBuild.sh",
     "prepack": "pnpm publish build --no-git-checks && kill -9 $PPID && exit",
     "build": "pnpm build:clean && pnpm build:raw",
-    "build:raw": "tsc -p tsconfig-build.json && vite build && lib/build_preserveUseClient.sh && pnpm build:plugins",
+    "build:raw": "tsc -p tsconfig-build.json && vite build && lib/build_preserveUseClientServer.sh && pnpm build:plugins",
     "build:plugins": "cd plugins && tsc",
     "build:clean": "rm -rf build",
     "lint:eslint": "eslint **/*.{ts,js,tsx,jsx}",
@@ -83,6 +83,7 @@
     "vite-plugin-dts": "3.7.3",
     "vite-plugin-lib-inject-css": "2.0.0",
     "vite-plugin-static-copy": "1.0.1",
+    "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "4.3.1"
   },
   "peerDependencies": {

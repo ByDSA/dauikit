@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "#utils": ["src/components/utils"],
-      "#utils/*": ["src/components/utils/*"]
+      "#utils/*": ["src/components/utils/*"],
+      "#icons/*": ["src/icons/*"]
     }
   },
   "exclude": ["node_modules"],

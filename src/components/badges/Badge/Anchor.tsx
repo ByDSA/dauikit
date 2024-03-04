@@ -3,7 +3,7 @@ import styles from "./Anchor.styles.module.css";
 
 export type Props = Themeable & {
   children: React.ReactNode;
-  href: string;
+  href?: string;
   title?: string;
   disabled?: boolean;
 };

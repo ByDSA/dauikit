@@ -1,33 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Badge } from "../Badge";
+import NpmIcon from "src/icons/logos/NpmIcon";
+import { DualBadge } from "../DualBadge";
 import { Props as CommonProps } from "./common";
 
 export type Props = CommonProps & {
   version?: string;
-  logoSrc?: string;
 };
 
-export default function NpmBadge( {pkg, logoSrc, version: staticVersion, className}: Props) {
-  const fullUrl = `https://www.npmjs.com/package/${pkg}`;
+export default function NpmBadge( {pkg, version: staticVersion, className}: Props) {
+  const link = {
+    href: `https://www.npmjs.com/package/${pkg}`,
+    title: `Ver paquete "${pkg}" en npm`,
+  };
   const version = useVersion( {
     version: staticVersion,
     pkg,
   } );
-  const logoImgProps = {
-    alt: "Logo npm",
-    src: logoSrc ?? "/dauikit/logos/npm.svg",
-  };
-  const logoImg = <img {...logoImgProps} />;
-  const badge = <Badge className={className} leftIcon={logoImg} right={`v${version}`} />;
+  const icon = <NpmIcon />;
 
-  return (
-    <a href={fullUrl} title="Librería en npm">{badge}</a>
-  );
+  return <DualBadge className={className} link={link} left={icon} right={`v${version}`} />;
 }
 
-const useVersion = ( {version: staticVersion, pkg}: Omit<Props, "logoSrc">) =>{
+type UseVersionProps = {
+  version?: string;
+  pkg: string;
+};
+const useVersion = ( {version: staticVersion, pkg}: UseVersionProps) =>{
   const [version, setVersion] = useState(staticVersion ?? "?.?.?");
 
   useEffect(() => {

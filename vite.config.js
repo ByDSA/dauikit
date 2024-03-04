@@ -7,6 +7,7 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 const inputSourceFiles = Object.fromEntries(
@@ -46,9 +47,13 @@ export default defineConfig( {
   },
   plugins: [
     react(),
-    libInjectCss(), dts( {
+    libInjectCss(),
+    dts( {
       include: ["src"],
     } ),
+    svgr( {
+      include: "**/*.svg?react",
+    } ), // Import SVGs as React components
     tsconfigPaths(),
     viteStaticCopy( {
       targets: [

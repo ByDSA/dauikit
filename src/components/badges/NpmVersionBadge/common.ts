@@ -1,5 +1,5 @@
-import { InheritingProps } from "../Badge/Badge";
+import { DualBadgeProps } from "../DualBadge";
 
-export type Props = InheritingProps & {
+export type Props = Omit<DualBadgeProps, "left" | "right"> & {
   pkg: string;
 };

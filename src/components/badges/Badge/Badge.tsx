@@ -1,28 +1,32 @@
 import shadowsStyle from "src/styles/shadows.module.css";
 import { Themeable, classNames } from "../../utils";
+import Anchor from "./Anchor";
 import styles from "./styles.module.css";
 
-export type InheritingProps = Themeable & {
+export type Props = Themeable & {
   disabled?: boolean;
+  noButton?: boolean;
+  children: React.ReactNode;
+  link?: {
+    href: string;
+    title: string;
+  };
 };
 
-type Props = InheritingProps & {
-  left?: string;
-  leftIcon?: React.ReactNode;
-  right: string;
-  disabled?: boolean;
-};
+export type PropsNoChildren = Omit<Props, "children">;
 
-const Badge = ( { left, right, leftIcon, className, disabled }: Props) => {
-  const classes = [styles.badge, shadowsStyle.button];
+const Badge = ( { className, disabled, noButton, children, link }: Props) => {
+  const classes = [styles.badge];
 
-  if (disabled)
-    classes.push(styles.disabled);
+  if (!noButton && !disabled)
+    classes.push(shadowsStyle.button);
 
   if (className)
     classes.push(className);
 
-  return <span className={classNames(...classes)}><span className={styles.left}>{leftIcon}{left}</span><span className={styles.right}>{right}</span></span>;
+  const badge = <span className={classNames(...classes)}>{children}</span>;
+
+  return <Anchor disabled={disabled} href={link?.href} title={link?.title}>{badge}</Anchor>;
 };
 
 export default Badge;

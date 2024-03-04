@@ -32,6 +32,8 @@ module.exports = {
           "src/styles/*.css",
           "components/*",
           "components/{buttons,badges}/*",
+          "public/**",
+          "#icons/**",
         ],
       },
     ],

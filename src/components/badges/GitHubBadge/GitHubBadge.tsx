@@ -1,20 +1,17 @@
-import Badge from "../Badge/Badge";
-import Anchor from "./Anchor";
+import GitHubIcon from "#icons/logos/GitHubIcon";
+import { DualBadge } from "../DualBadge";
 import { Props } from "./common";
 
-export default function GitHubBadge( {repo, logoSrc, ...otherProps}: Props) {
+export default function GitHubBadge( {repo, ...badgeProps}: Props) {
   const urlName = generateImgLinkRepoName(repo);
-  const logoImgProps = {
-    alt: "GitHub Logo",
-    src: logoSrc ?? "/dauikit/logos/github.svg",
+  const link = {
+    href: `https://github.com/${repo}`,
+    title: `Ver repositorio "${repo}" en GitHub`,
   };
-  const logoImg = <img {...logoImgProps} />;
-  const badge = <Badge left="GitHub" leftIcon={logoImg} right={urlName}/>;
-  const fullUrl = `https://github.com/${repo}`;
+  const icon = <GitHubIcon />;
+  const left = <>{icon}GitHub</>;
 
-  return (
-    <Anchor href={fullUrl} disabled={otherProps.disabled} title="Código fuente en GitHub">{badge}</Anchor>
-  );
+  return <DualBadge {...badgeProps} link={link} left={left} right={urlName} />;
 }
 
 function generateImgLinkRepoName(repo: string): string {
