@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Badge } from "../Badge";
 import { Props as CommonProps } from "./common";
