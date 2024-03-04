@@ -1,24 +1,20 @@
 import shadowsStyle from "src/styles/shadows.module.css";
+import Anchor, { AnchorProps } from "../../Anchor/Anchor";
 import { Themeable, classNames } from "../../utils";
-import Anchor from "./Anchor";
 import styles from "./styles.module.css";
 
 export type Props = Themeable & {
-  disabled?: boolean;
   noButton?: boolean;
   children: React.ReactNode;
-  link?: {
-    href: string;
-    title: string;
-  };
+  anchor?: AnchorProps;
 };
 
 export type PropsNoChildren = Omit<Props, "children">;
 
-const Badge = ( { className, disabled, noButton, children, link }: Props) => {
+const Badge = ( { className, noButton, children, anchor: anchorProps }: Props) => {
   const classes = [styles.badge];
 
-  if (!noButton && !disabled)
+  if (!noButton && !anchorProps?.disabled)
     classes.push(shadowsStyle.button);
 
   if (className)
@@ -26,7 +22,7 @@ const Badge = ( { className, disabled, noButton, children, link }: Props) => {
 
   const badge = <span className={classNames(...classes)}>{children}</span>;
 
-  return <Anchor disabled={disabled} href={link?.href} title={link?.title}>{badge}</Anchor>;
+  return <Anchor {...anchorProps}>{badge}</Anchor>;
 };
 
 export default Badge;
