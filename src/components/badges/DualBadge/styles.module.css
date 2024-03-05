@@ -6,6 +6,7 @@
   letter-spacing: -0.01em;
   display: flex;
   align-items: center;
+  text-wrap: nowrap;
   text-align: center;
   gap: 0.325em;
   background: linear-gradient(

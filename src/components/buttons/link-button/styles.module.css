@@ -7,7 +7,7 @@
   border-color: var(--color-dark, gray);
   gap: 0.5rem;
   color: var(--color-darker, black);
-  font-weight: 100;
+  font-weight: 400;
   font-size: 1rem;
   text-transform: uppercase;
   transition: background-color 0.3s;
