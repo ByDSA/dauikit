@@ -1,7 +1,7 @@
 import { Themeable, classNames } from "../utils";
 import styles from "./styles.module.css";
 
-export type AnchorProps = {
+export type LinkProps = {
   href?: string;
   title?: string;
   disabled?: boolean;
@@ -9,12 +9,12 @@ export type AnchorProps = {
   rel?: string;
 };
 
-export type Props = AnchorProps & Themeable & {
+export type Props = LinkProps & Themeable & {
   children: React.ReactNode;
 };
 
-export default function Anchor( {disabled, className, children,...aProps}: Props) {
-  const classes = [styles.anchor];
+export default function Link( {disabled, className, children,...aProps}: Props) {
+  const classes = [styles.link];
 
   if (disabled)
     classes.push(styles.disabled);

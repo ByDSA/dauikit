@@ -1,11 +1,11 @@
 import { JSX } from "react";
 import shadowsStyles from "../../../styles/shadows.module.css";
-import { Anchor, AnchorProps } from "../../Anchor";
+import { ALink, ALinkProps } from "../../link";
 import { classNames } from "../../utils";
 import { Button, ButtonProps } from "../button";
 import styles from "./styles.module.css";
 
-export type Props = Omit<ButtonProps, "anchor" | "children" | "disabled"> & {
+export type Props = Omit<ButtonProps, "children" | "disabled" | "link"> & {
   href: string;
   disabled?: boolean;
   icon?: JSX.Element;
@@ -13,7 +13,7 @@ export type Props = Omit<ButtonProps, "anchor" | "children" | "disabled"> & {
 };
 
 const LinkButton = ( {href, disabled, className, children, icon}: Props) => {
-  const anchorProps: AnchorProps = {
+  const linkProps: ALinkProps = {
     target: "_blank",
     rel:"noopener noreferrer",
     title: typeof children === "string" ? children : undefined,
@@ -21,9 +21,9 @@ const LinkButton = ( {href, disabled, className, children, icon}: Props) => {
     disabled,
   };
 
-  return <Anchor {...anchorProps}>
-    <Button disabled={anchorProps.disabled} className={classNames(styles.button, shadowsStyles.button, className)}>{icon}{children}</Button>
-  </Anchor>;
+  return <ALink {...linkProps}>
+    <Button disabled={linkProps.disabled} className={classNames(styles.button, shadowsStyles.button, className)}>{icon}{children}</Button>
+  </ALink>;
 };
 
 export default LinkButton;

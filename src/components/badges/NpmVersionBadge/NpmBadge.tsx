@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NpmIcon from "src/icons/logos/NpmIcon";
-import { AnchorProps } from "../../Anchor";
+import { ALinkProps } from "../../link";
 import { DualBadge } from "../DualBadge";
 import { Props as CommonProps } from "./common";
 
@@ -11,7 +11,7 @@ export type Props = CommonProps & {
 };
 
 export default function NpmBadge( {pkg, version: staticVersion, disabled, className}: Props) {
-  const anchor: AnchorProps = {
+  const link: ALinkProps = {
     href: `https://www.npmjs.com/package/${pkg}`,
     title: `Ver paquete "${pkg}" en npm`,
     target: "_blank",
@@ -23,7 +23,7 @@ export default function NpmBadge( {pkg, version: staticVersion, disabled, classN
   } );
   const icon = <NpmIcon />;
 
-  return <DualBadge className={className} anchor={anchor} left={icon} right={`v${version}`} />;
+  return <DualBadge className={className} link={link} left={icon} right={`v${version}`} />;
 }
 
 type UseVersionProps = {
