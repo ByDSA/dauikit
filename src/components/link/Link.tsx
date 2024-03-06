@@ -1,7 +1,7 @@
 import { Themeable, classNames } from "../utils";
 import styles from "./styles.module.css";
 
-export type LinkProps = {
+export type LinkProps = Themeable & {
   href?: string;
   title?: string;
   disabled?: boolean;
@@ -9,7 +9,7 @@ export type LinkProps = {
   rel?: string;
 };
 
-export type Props = LinkProps & Themeable & {
+export type Props = LinkProps & {
   children: React.ReactNode;
 };
 
