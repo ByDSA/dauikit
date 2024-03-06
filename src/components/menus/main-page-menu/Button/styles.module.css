@@ -1,0 +1,43 @@
+@value menu from "../styles.module.css";
+
+:global(.menu) .button {
+  height: 5.5rem;
+  width: 35vh;
+  font-size: 4vh;
+  text-transform: none;
+  line-height: 1.42857143;
+
+  @media (orientation: portrait) {
+    font-size: max(1.5rem, 4vw);
+    width: 100%;
+    height: auto;
+  }
+}
+
+:global(.menu) .link {
+  margin: 1.5em 2.25em;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+
+  @media (orientation: portrait) {
+    width: max(80%, 186px);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+:global(.menu) .link:hover {
+  text-decoration: none;
+}

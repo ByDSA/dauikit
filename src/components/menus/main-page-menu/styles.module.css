@@ -1,0 +1,73 @@
+.menuWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+/* Responsive */
+@media (orientation: portrait) {
+  .menuWrap {
+    align-items: center;
+    height: 100%;
+  }
+  .menu {
+    --elements: 4;
+
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: start;
+    gap: min(calc(80vh / var(--elements) - 4.5rem), 2rem);
+  }
+}
+
+/* Numerar los elementos */
+.menu > *:nth-child(1) {
+  --nChild: 1;
+}
+
+.menu > *:nth-child(2) {
+  --nChild: 2;
+}
+
+.menu > *:nth-child(3) {
+  --nChild: 3;
+}
+
+.menu > *:nth-child(4) {
+  --nChild: 4;
+}
+
+.menu > *:nth-child(5) {
+  --nChild: 5;
+}
+
+.menu > *:nth-child(6) {
+  --nChild: 6;
+}
+
+.menu > *:nth-child(7) {
+  --nChild: 7;
+}
+
+.menu > *:nth-child(8) {
+  --nChild: 8;
+}
+
+.menu > *:nth-child(9) {
+  --nChild: 9;
+}
+
+.menu > *:nth-child(10) {
+  --nChild: 10;
+}
