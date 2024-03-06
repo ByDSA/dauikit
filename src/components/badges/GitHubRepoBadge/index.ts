@@ -1,7 +1,7 @@
 export {
-  default as GitHubBadge,
+  default as GitHubRepoBadge,
 } from "./GitHubBadge";
 
 export {
-  default as GitHubBadgeSvg,
+  default as GitHubRepoBadgeSvg,
 } from "./GitHubBadgeSvg";
