@@ -1,0 +1,5 @@
+@value socialButton from "../badge/SocialButton.module.css";
+
+:global(.socialButton).button {
+  --color: #c93738;
+}

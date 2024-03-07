@@ -1,0 +1,5 @@
+@value socialButton from "../badge/SocialButton.module.css";
+
+:global(.socialButton).button {
+  --color: #1877f2; /* https://materialui.co/socialcolors/facebook */
+}

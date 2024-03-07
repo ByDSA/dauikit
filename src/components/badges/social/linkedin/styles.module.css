@@ -1,0 +1,5 @@
+@value socialButton from "../badge/SocialButton.module.css";
+
+:global(.socialButton).button {
+  --color: #0a66c2; /* Source: linkedin.com Logo CSS --color-brand */
+}

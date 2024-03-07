@@ -1,0 +1,5 @@
+@value socialButton from "../badge/SocialButton.module.css";
+
+:global(.socialButton).button {
+  --color: rgba(15, 20, 25, 1); /* twitter.com logo */
+}

@@ -1,0 +1,56 @@
+.socialButton {
+  --color: black;
+  --color2: white;
+}
+
+*:has(> .socialButton) > .socialButton {
+  font-size: min(36px, 5vw);
+
+  width: 2em;
+  height: 2em;
+  padding: 0px;
+  margin-bottom: 0;
+  overflow: visible;
+
+  flex-basis: 2em;
+
+  border: 1px solid transparent;
+  border-radius: 2em;
+  line-height: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  white-space: nowrap;
+  touch-action: manipulation;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+*:has(> .socialButton) > :is(.socialButton:link, .socialButton:visited) {
+  background: var(--color);
+  color: var(--color2);
+}
+
+*:has(> .socialButton) > .socialButton:hover {
+  color: var(--color);
+  background: var(--color2);
+}
+
+*:has(> .socialButton) > .socialButton:hover svg {
+  fill: var(--color);
+}
+
+*:has(> .socialButton) > .socialButton svg {
+  display: inline-block;
+  max-height: 1em;
+  max-width: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  fill: var(--color2);
+}

@@ -1,0 +1,12 @@
+@value socialButton from "../badge/SocialButton.module.css";
+
+:global(.socialButton).button {
+  --color: #ff0000; /* Logo www.youtube.com */
+}
+:global(.socialButton).button svg path:nth-child(2) {
+  fill: var(--color);
+}
+
+:global(.socialButton).button:hover svg path:nth-child(2) {
+  fill: var(--color2);
+}
