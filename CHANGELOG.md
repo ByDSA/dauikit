@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/ByDSA/daukit/compare/v0.0.10...v0.1.0) (2024-03-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* LinkButton link (<a>) can now to be customized
+* renombrado Card a CardDigi
+* replace global css by css module
+* rename Button as TextButton
+
+### Features
+
+*  YouTube videos ([e8be4c1](https://github.com/ByDSA/daukit/commit/e8be4c1e71f9fe08a67749c0176df49bf2ab5633))
+* add Badges components (GitHub and Npm) ([b6b24e6](https://github.com/ByDSA/daukit/commit/b6b24e63cd51e10d44e6c979800c5b5b0110686c))
+* add Button ([92ccf81](https://github.com/ByDSA/daukit/commit/92ccf813d684f71037032c1f6f5afec224806762))
+* add LinkButton ([5aeb06f](https://github.com/ByDSA/daukit/commit/5aeb06f5138269fba31d7ceb1006c757bf62be6e))
+* add MainMenu buttons ([956b032](https://github.com/ByDSA/daukit/commit/956b0324ce2769092f909be08ec604fc4287d11d))
+* add plugin WebpackPublicPugin ([36e049c](https://github.com/ByDSA/daukit/commit/36e049cde150a83ffda3e041dbce019a1625d3d2))
+* add tooltips ([0765995](https://github.com/ByDSA/daukit/commit/0765995967c0053f7d5151c4cf3f9fdfb2651d09))
+* icons and badges ([ea2451f](https://github.com/ByDSA/daukit/commit/ea2451f61164b8ee2456d5c35ca4d47dc9904d03))
+* one index file for one component at src/ (tree shaking) ([56d82e6](https://github.com/ByDSA/daukit/commit/56d82e657dd029a22aa316805bdb2ae0629c265c))
+* social badges ([d288ca5](https://github.com/ByDSA/daukit/commit/d288ca5ef5631ac3cc8d40a4f71ab59aa4c36b5e))
+
+
+### Bug Fixes
+
+* actualizar exportaciones en index.tsx ([79fdbf9](https://github.com/ByDSA/daukit/commit/79fdbf9ff409445affeaf9a2401090d6e0719491))
+* LinkButton link (<a>) can now to be customized ([57cb002](https://github.com/ByDSA/daukit/commit/57cb00209b79147ef2b687729a56d80851390f8f))
+* little css changes ([42fa1b3](https://github.com/ByDSA/daukit/commit/42fa1b3116d0d978a73bc5df31bf5fbbe93c5582))
+* preserve "use client|server" in components after building ([5587546](https://github.com/ByDSA/daukit/commit/558754635df678d8bd9eab8a031f8fa33a9eb728))
+* remove unnecessary css variables ([4727a22](https://github.com/ByDSA/daukit/commit/4727a225890df99a21386c4ae94a67488dd358dd))
+* rename anchor as ALink ([8a9c73d](https://github.com/ByDSA/daukit/commit/8a9c73d7940c7da454d97f5b624eae55e75349a9))
+* rename Button as TextButton ([cadd735](https://github.com/ByDSA/daukit/commit/cadd735ca69d39edc061ab58d504fd5ac15417ec))
+* replace global css by css module ([c955975](https://github.com/ByDSA/daukit/commit/c955975d859007b3708024c23b15400e60bbf485))
+* separate Anchor component ([3b6c25b](https://github.com/ByDSA/daukit/commit/3b6c25b213505751c2f83ec0f7f1cf98ce6a5cac))
+
+
+* renombrado Card a CardDigi ([194dd34](https://github.com/ByDSA/daukit/commit/194dd34dc434e729882121dde31e94c097fad475))
+
 ### [0.0.10](https://github.com/ByDSA/daukit/compare/v0.0.9...v0.0.10) (2024-02-26)
 
 
