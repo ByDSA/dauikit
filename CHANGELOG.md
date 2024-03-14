@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/ByDSA/daukit/compare/v0.1.0...v0.1.1) (2024-03-14)
+
+
+### Features
+
+* Audio and Slider components ([b72f4c0](https://github.com/ByDSA/daukit/commit/b72f4c0e6b927d3ae57a7bd9389ef156c30eb0ad))
+
 ## [0.1.0](https://github.com/ByDSA/daukit/compare/v0.0.10...v0.1.0) (2024-03-07)
 
 
