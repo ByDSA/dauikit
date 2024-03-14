@@ -1,0 +1,38 @@
+.marquee {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.marquee > span {
+  display: block;
+  width: 200%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.marquee > span > span {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+.marquee > span > span > span {
+  display: inline-block;
+}
+
+.whole {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
