@@ -7,15 +7,14 @@
     --color-open-hover: white;
     --background-color: rgba(0, 0, 0, 0.4);
     --background-color-hover: rgba(0, 0, 0, 0.2);
-    --diameter: 100px;
-    --padding: calc(var(--diameter) * 0.25);
 
-    --_diameter: var(--diameter);
-    --_diameter-inner: calc(var(--_diameter) - var(--padding) * 2);
+    --_diameter: var(--diameter, 100px);
+    --_padding: calc(var(--_diameter) * 0.25);
+    --_diameter-inner: calc(var(--_diameter) - var(--_padding) * 2);
 
     height: var(--_diameter);
     width: var(--_diameter);
-    padding: var(--padding);
+    padding: var(--_padding);
     border-radius: 50%;
     z-index: 9;
 
