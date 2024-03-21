@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/ByDSA/daukit/compare/v0.1.1...v0.1.2) (2024-03-21)
+
+
+### Bug Fixes
+
+* style changes for customization ([668a44c](https://github.com/ByDSA/daukit/commit/668a44cf8469eeb9626550332a99c65c268204a1))
+
 ### [0.1.1](https://github.com/ByDSA/daukit/compare/v0.1.0...v0.1.1) (2024-03-14)
 
 
