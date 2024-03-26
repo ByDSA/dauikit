@@ -14,7 +14,12 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "#utils": ["src/components/utils"],
+      "#utils/*": ["src/components/utils/*"],
+      "#icons/*": ["src/icons/*"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

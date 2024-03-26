@@ -10,10 +10,6 @@
       "email": "danisales.es@gmail.com"
     }
   ],
-  "imports": {
-    "#utils": "./src/components/utils",
-    "#icons": "./src/icons"
-  },
   "license": "UNLICENSED",
   "main": "build/index.js",
   "types": "build/index.d.ts",
